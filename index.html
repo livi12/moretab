@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>固定tab项，多出来的选项以下拉的形式显示</title>
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+</head>
+<body>
+<p style="margin-bottom:20px">2</p>
+	<div class="m-tab-hd z-more-tab f-clearfix" id="tablist" >
+
+	</div>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="js/moreTab.js"></script>
+	<script type="text/javascript">
+	var m=new moreTab({
+          id:tablist,
+          itemList:[{'name':'财经','hLink':'www.baidu.com'},{'name':'体育','hLink':'http://news.qq.com/'},{'name':'娱乐','hLink':'www.baidu.com'},{'name':'房产','hLink':'www.baidu.com'},{'name':'科技','hLink':'www.baidu.com'},{'name':'汽车','hLink':'www.baidu.com'},{'name':'数码','hLink':'www.baidu.com'},{'name':'时尚','hLink':'www.baidu.com'},{'name':'时尚','hLink':'https://www.baidu.com/'},{'name':'教育','hLink':'https://www.baidu.com/'}],
+          tabItemLen:7
+        });
+	</script>
+</body>
+</html>
