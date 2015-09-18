@@ -25,23 +25,28 @@
       build:function(o){
         var contentStr='<div class="tab-list"><ul class="card f-clearfix"><li class="active tab-li"><a target="_blank" href="'+this.itemList[0].hLink+'">'+this.itemList[0].name+'</a></li>';
         var itemLen=(this.tabItemLen>=this.itemLen)?this.itemLen:this.tabItemLen;
-        for(var i=1;i<itemLen-1;i++){
-          contentStr+='<li class="tab-li"><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li>';
-        }
-        if(this.tabItemLen>=this.itemLen){
-          var itemClass=(this.tabItemLen==this.itemLen)?'f-noborder tab-li':'tab-li';
-          contentStr+='<li class="'+itemClass+'"><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li></ul></div>';
+        if(this.itemLen==1){
+          contentStr+="</ul></div>";
         }
         else{
-          contentStr+='</ul></div>'+
-            '<div class="more-tab">'+
-            '<div class="channelNavMore">更多</div>'+
-            '<ul>';
-            for(var i=this.tabItemLen-1;i<this.itemLen;i++){
-              contentStr+='<li><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li>'
-            }
-          contentStr+='</ul></div>';
-          this.moreBtnHover();
+          for(var i=1;i<itemLen-1;i++){
+            contentStr+='<li class="tab-li"><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li>';
+          }
+          if(this.tabItemLen>=this.itemLen){
+            var itemClass=(this.tabItemLen==this.itemLen)?'f-noborder tab-li':'tab-li';
+            contentStr+='<li class="'+itemClass+'"><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li></ul></div>';
+          }
+          else{
+            contentStr+='</ul></div>'+
+              '<div class="more-tab">'+
+              '<div class="channelNavMore">更多</div>'+
+              '<ul>';
+              for(var i=this.tabItemLen-1;i<this.itemLen;i++){
+                contentStr+='<li><a target="_blank" href="'+this.itemList[i].hLink+'">'+this.itemList[i].name+'</a></li>'
+              }
+            contentStr+='</ul></div>';
+            this.moreBtnHover();
+          }
         }
         this.obj.append(contentStr);
       },
